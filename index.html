@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Manager Pro</title>
+</head>
+<body>
+    <main id="app-container">
+        <!-- Control Panel by left -->
+        <div id="control-panel">
+            <form>
+                <label for="task-title-input">Task Title</label>
+                <input type="text" id="task-title-input" placeholder="e.g Finalize project roadmap" required>
+
+                <select name="" id="task-priority-select">
+                    <option value="High">High</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Low">Low</option>
+                </select>
+
+                <button type="submit">+ Add Task</button>
+            </form>
+        </div>
+
+        <!-- The feed by right-->
+        <div id="feed">
+            <div id="pending-tasks-container"></div>
+
+            <div id="completed-tasks-container"></div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
