@@ -15,7 +15,7 @@ let tasks = [
 // and injects them into the correct container based on whether their status is "Pending" or "Completed"
 
 function renderTasks(){
-    // To clear out inputs if available at the first time
+    // Begin by clearing the task section to follow the logic.
     pendingTask.innerHTML = "";
     completedTask.innerHTML = "";
 
@@ -52,7 +52,7 @@ function renderTasks(){
 
 renderTasks()
 
-// Settin gup an event listener tonprevent default refresh
+// Setting up an event listener tonprevent default refresh
 
 form.addEventListener("submit", (event) => {
     event.preventDefault()
@@ -88,11 +88,37 @@ pendingTask.addEventListener("click", (event) => {
 // Identify the Button: Inside that event listener, use event.target to check if the user clicked a 
 // button with the class complete-btn or delete-btn. You can check this using .classList.contains()
     if(event.target.classList.contains("complete-btn")){
-        consolole.log("Completed Button clicked")
+
+        // Create a varible to find the parent card
+        const taskCard = event.target.closest(".task-card")
+        // Extract the unique id from that card using .dataset property
+        const taskId = taskCard.dataset.id;
+
+        console.log("User wants to complete the task with ID:", taskId)
     } 
 
     if(event.target.classList.contains("delete-btn")){
-        console.log("Completed Button clicked")
-    }
+        // create a varible to find the parent card 
+        const taskCard = event.target.closest(".task-card")
 
+        //Extract the unique id from tat card using .dataset property 
+        const taskId = taskCard.dataset.id;
+
+        console.log("The user wants to delete task with ID", taskId)
+
+    }
+})
+
+completedTask.addEventListener("click", (event) => {
+    if (event.target.classList.contains("delete-btn")){
+        
+        // Create a variable to find the parent card 
+        const taskCard = event.target.closest(".task-card")
+
+        // Extract the unique id from the card using .dataset property
+        const taskId = taskCard.dataset.id;
+
+        console.log(`The user wants to delete a task with ID: ${taskId}`)
+        
+    }
 })
