@@ -145,3 +145,5 @@ completedTask.addEventListener("click", (event) => {
 function saveToStorage(){
     localStorage.setItem("myTasks", JSON.stringify(tasks));
 }
+
+console.log(localStorage)
