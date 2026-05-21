@@ -6,7 +6,7 @@ const completedTask = document.querySelector("#completed-tasks-container")
 
 // Starting dataset array 
 
-let tasks = [
+let tasks = JSON.parse(localStorage.getItem("myTasks")) || [
     { id: 1, title: "Review InsightFilter deployment strategy", priority: "High", status: "Pending" },
     { id: 2, title: "Optimize CSS Grid breakpoints", priority: "Medium", status: "Completed" },
 ];
@@ -70,7 +70,9 @@ form.addEventListener("submit", (event) => {
     }
 
     tasks.push(newTask)
+    saveToStorage()
     renderTasks()
+   
 
     // clear the input after being added
     taskInput.value = "";
@@ -94,7 +96,16 @@ pendingTask.addEventListener("click", (event) => {
         // Extract the unique id from that card using .dataset property
         const taskId = taskCard.dataset.id;
 
-        console.log("User wants to complete the task with ID:", taskId)
+        // Look through out the array of data and find the id that mtches this ID and changes its status from "pending" to "compeleted".
+        const foundTask = tasks.find(task => task.id == taskId)
+
+        // Toggle the status: If a task was found, flip its status string: 
+        if (foundTask){
+            foundTask.status = "Completed"
+        }
+        
+        renderTasks()
+        saveToStorage()
     } 
 
     if(event.target.classList.contains("delete-btn")){
@@ -104,9 +115,11 @@ pendingTask.addEventListener("click", (event) => {
         //Extract the unique id from tat card using .dataset property 
         const taskId = taskCard.dataset.id;
 
-        console.log("The user wants to delete task with ID", taskId)
-
+        // GO through the database array and find the id that mates and delete the task
+        tasks = tasks.filter(task => task.id != taskId)
     }
+    renderTasks()
+    saveToStorage()
 })
 
 completedTask.addEventListener("click", (event) => {
@@ -118,7 +131,17 @@ completedTask.addEventListener("click", (event) => {
         // Extract the unique id from the card using .dataset property
         const taskId = taskCard.dataset.id;
 
-        console.log(`The user wants to delete a task with ID: ${taskId}`)
+        // Go through the data and find out the id that matches and delete the task as well 
+        tasks = tasks.filter( task => task.id != taskId)
         
     }
+
+    renderTasks()
+    saveToStorage()
 })
+
+// To dave our list of task even after a refresh there is a need ti save them in the localStorage
+
+function saveToStorage(){
+    localStorage.setItem("myTasks", JSON.stringify(tasks));
+}
