@@ -52,7 +52,7 @@ function renderTasks(){
 
 renderTasks()
 
-// Setting up an event listener tonprevent default refresh
+// Setting up an event listener to prevent default refresh
 
 form.addEventListener("submit", (event) => {
     event.preventDefault()
@@ -80,15 +80,17 @@ form.addEventListener("submit", (event) => {
 })
 
 
-// Right now, we have buttons inside our lists, but they don't do anything when clicked. Instead of adding a click event listener 
-// to every single button we create (which breaks whenever a new task is added), we use a concept called Event Delegation.
+/* Right now, we have buttons inside our lists, but they don't do anything when clicked. Instead of adding a click event listener 
+ to every single button we create (which breaks whenever a new task is added), we use a concept called Event Delegation. */
 
-// We attach one single event listener to the entire parent wrapper (pendingTask and completedTask), and whenever a 
-// click happens inside them, we check exactly which element triggered it.
+/* We attach one single event listener to the entire parent wrapper (pendingTask and completedTask), and whenever a 
+ click happens inside them, we check exactly which element triggered it. */
 
 pendingTask.addEventListener("click", (event) => {
-// Identify the Button: Inside that event listener, use event.target to check if the user clicked a 
-// button with the class complete-btn or delete-btn. You can check this using .classList.contains()
+
+/* Identify the Button: Inside that event listener, use event.target to check if the user clicked a 
+ button with the class complete-btn or delete-btn. You can check this using .classList.contains() */
+
     if(event.target.classList.contains("complete-btn")){
 
         // Create a varible to find the parent card
