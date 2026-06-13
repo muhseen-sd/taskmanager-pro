@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>File Manager Pro</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <main id="app-container">
         <!-- Control Panel by left -->
-        <div id="control-panel">
+        <div id="dashboard-container">
             <form>
                 <label for="task-title-input">Task Title</label>
                 <input type="text" id="task-title-input" placeholder="e.g Finalize project roadmap" required>
@@ -24,7 +25,7 @@
         </div>
 
         <!-- The feed by right-->
-        <div id="feed">
+        <div id="task-board">
             <div id="pending-tasks-container"></div>
 
             <div id="completed-tasks-container"></div>

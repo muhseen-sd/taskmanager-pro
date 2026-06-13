@@ -11,11 +11,11 @@ let tasks = JSON.parse(localStorage.getItem("myTasks")) || [
     { id: 2, title: "Optimize CSS Grid breakpoints", priority: "Medium", status: "Completed" },
 ];
 
-// Writing a function that loops through your tasks array, builds the HTML string for each card, 
-// and injects them into the correct container based on whether their status is "Pending" or "Completed"
+/* Writing a function that loops through the tasks array, builds the HTML string for each card, 
+and injects them into the correct container based on whether their status is "Pending" or "Completed" */
 
 function renderTasks(){
-    // Begin by clearing the task section to follow the logic.
+    // Clear the task section first to follow the logic.
     pendingTask.innerHTML = "";
     completedTask.innerHTML = "";
 
@@ -136,10 +136,12 @@ completedTask.addEventListener("click", (event) => {
         // Go through the data and find out the id that matches and delete the task as well 
         tasks = tasks.filter( task => task.id != taskId)
         
-    }
 
+        
     renderTasks()
     saveToStorage()
+    }
+
 })
 
 // To dave our list of task even after a refresh there is a need ti save them in the localStorage

@@ -1,0 +1,35 @@
+:root{
+    /* Premium color palette */
+    --bg-main: #f4f6f9;         /* Soft, premium light grey background */
+    --surface-card: #ffffff;       /* Pure white for our task cards and forms */
+    --text-primary: #1e293b;      /* Deep slate grey for high-contrast headings */
+    --text-muted: #64748b;        /* Soft slate grey for secondary text/subtitles */
+
+    /* Branding Colors  */
+    --primary-accent: #4f46e5; /* Deep Royal Violet for buttons and key lines */
+    --priority-high: #ef4444;   /* Vivid crimson for high-priority elements */
+    --priority-med: #f59e0b;    /* Warm amber for medium priority */
+    --priority-low: #10b981;    /* Vibrant emerald green for low priority */
+    
+    /* Global Layout Metrics */
+    --radius-premium: 12px;    /* Smooth rounded corners for a modern feel */
+    --shadow-subtle: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+}
+
+/* Universal Reset */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Padding and borders stay INSIDE the specified width */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Clean, modern interface text */
+}
+
+/* Global Canvas */
+body{
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    min-height: 100vh;
+    padding: 2rem; /* Gives breathing room around the entire dashboard edge */
+}
