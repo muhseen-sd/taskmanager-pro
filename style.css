@@ -33,3 +33,36 @@ body{
     min-height: 100vh;
     padding: 2rem; /* Gives breathing room around the entire dashboard edge */
 }
+
+.dashboard-container{
+    display: grid;
+    /* Column 1 is 350px, Column 2 takes up all remaining fraction space */
+    grid-template-columns: 350px 1fr;
+    /* Creates a beautiful 2rem gap space between the panel and the board */
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;  /* Centers the whole dashboard layout on ultra-wide monitors */
+}
+
+.task-board{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.control-panel{
+    background-color: var(--surface-card);
+    padding: 2rem;      /* Generous internal padding padding so elements breathe */
+    border-radius: var(--radius-premium);
+    box-shadow: var(--shadow-subtle);
+    height: fit-content;  /* Ensures the card only grows as tall as its inner elements */
+}
+
+.control-panel h2{
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 1.5rem;                 /* Pushes the input fields down cleanly */
+    color: var(--text-primary);
+}

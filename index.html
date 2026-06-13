@@ -7,9 +7,10 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <main id="app-container">
+    <main class="dashboard-container">
         <!-- Control Panel by left -->
-        <div id="dashboard-container">
+        <div class="control-panel">
+            <h2>Control Panel</h2>
             <form>
                 <label for="task-title-input">Task Title</label>
                 <input type="text" id="task-title-input" placeholder="e.g Finalize project roadmap" required>
@@ -25,7 +26,7 @@
         </div>
 
         <!-- The feed by right-->
-        <div id="task-board">
+        <div class="task-board">
             <div id="pending-tasks-container"></div>
 
             <div id="completed-tasks-container"></div>
