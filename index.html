@@ -12,6 +12,7 @@
         <div class="control-panel">
             <h2>Control Panel</h2>
             <form>
+                <h3>Add new Task</h3>
                 <label for="task-title-input">Task Title</label>
                 <input type="text" id="task-title-input" placeholder="e.g Finalize project roadmap" required>
 
@@ -27,10 +28,30 @@
 
         <!-- The feed by right-->
         <div class="task-board">
-            <div id="pending-tasks-container"></div>
+            <!-- <div id="pending-tasks-container"></div>
+            <div id="completed-tasks-container"></div> -->
 
-            <div id="completed-tasks-container"></div>
+            <section class="board-column">
+
+                <div class="column-header">
+                    <h2>Pending Tasks</h2>
+                    <span class="plus-icon">+</span>
+                </div>
+                <div id="pending-tasks-container"></div>
+
+            </section>
+
+            <section class="board-column">
+                <div class="column-header">
+                    <h2>Completed Tasks</h2>
+                    <span class="plus-icon">+</span>
+                </div>
+                <div id="completed-tasks-container"></div>
+
+            </section>
+
         </div>
+        
     </main>
 
     <script src="script.js"></script>

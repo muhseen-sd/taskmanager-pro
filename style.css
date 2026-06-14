@@ -66,3 +66,74 @@ body{
     margin-bottom: 1.5rem;                 /* Pushes the input fields down cleanly */
     color: var(--text-primary);
 }
+
+
+/* Organize form layout into a vertical stack */
+.control-panel form{
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+/* Style the text label for input and priority */
+
+.control-panel label{
+    font-size: 0.87rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-bottom: 0.4rem;
+    display: block; /* Ensures label stays on its own line above the field */
+}
+
+/* Universal style for text input and priority  */
+.control-panel input[type=text], .control-panel select{
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+    border: 1px solid #cbd5e1; /* Subtle clean border */
+    border-radius: 8px;
+    background-color: #f8fafc; /* Ultra-light surface fill for inputs */
+    color: var(--text-primary);
+    transition: var(--transition-smooth);
+    outline: none; /* remove the default browser blacklines */
+}
+
+/* Interactive focus effectwhen user click on inputs */
+.control-panel input[type=text]:focus, .control-panel select:focus {
+    border-color: var(--primary-accent);
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgb(79, 70, 229, 0.15); /* Adds a premium soft outer glow */
+
+}
+
+.control-panel button {
+    width: 100%;
+    padding: 0.85rem;
+    font-size: 1rem;
+    font-weight: 600;
+    background-color: #64748b;
+    border: none;
+    border-radius: 8px;
+    color: #ffffff;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    box-shadow: 0 2px 4px 0 rgba(100, 116, 139, 0.2);
+}
+
+.control-panel button:hover{
+    background-color: #475569;
+    box-shadow: 0 4px 12px 0 rgba(100, 116, 139, 0.3);
+    transform: translateY(-1px); /* Moves button up by 1 pixel micro-interaction */
+
+}
+
+/* Active Effect: The exact millisecond the user clicks down */
+.control-panel button:active {
+    transform: translateY(1px); /* Pushes button down slightly to feel mechanical */
+    box-shadow: 0 1px 2px 0 rgba(100, 116, 139, 0.2);
+}
+
+/* Style the column containers inside the task board layout */
+.task-board h2{
+    font-size: 1.1rem;
+}
