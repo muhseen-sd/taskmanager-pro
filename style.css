@@ -133,7 +133,51 @@ body{
     box-shadow: 0 1px 2px 0 rgba(100, 116, 139, 0.2);
 }
 
-/* Style the column containers inside the task board layout */
-.task-board h2{
-    font-size: 1.1rem;
+/* Style the header container holding out text and icons */
+.column-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+/* Style the literal column titles */
+.column-header h2{
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Styling the plus icon*/
+.column-header .plus-icon{
+    color: var(--text-muted);
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+/* Styling the overrall task cards spawned by the Printing Press */
+.task-card{
+    background-color: var(--surface-card);
+    padding: 1.25rem;
+    border-radius: var(--radius-premium);
+    margin-bottom: 1rem;
+    border: 1px solid #e2e8f0;
+    transition: var(--transition-smooth);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+}
+
+/* Adding a little hover nteraction on the cards */
+.task-card:hover {
+    transform: translateY(-2px);  /* Lifts up slightly when user hovers */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.03); /* Deeper shadow */
+}
+
+.task-card h3{
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    line-height: 1.4;
+    margin-bottom: 0.75rem;
 }
