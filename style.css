@@ -219,7 +219,8 @@ body{
 }
 
 /* STyle the Complete Action Button container */
-.task-card .complete-btn{
+.task-card .complete-btn,
+.task-card .reopen-btn{
     flex: 1; /* Powerful flex instruction: tells the button to expand and fill up all available row space */
     display: flex;
     justify-content: center;
@@ -237,7 +238,8 @@ body{
 }
 
 /* Complete Button hover  */
-.task-card .complete-btn:hover{
+.task-card .complete-btn:hover,
+.task-card .reopen-btn:hover{
     background-color: #dcfce7;
     transform: translateY(-1px);
 }
@@ -271,6 +273,7 @@ body{
 
 /* Active compressed feedback layout for both interactive items */
 .task-card .complete-btn:active,
-.task-card .delete-btn:active {
+.task-card .delete-btn:active,
+.task-card .reopen-btn:active {
     transform: translateY(1px);
 }

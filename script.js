@@ -43,6 +43,7 @@ function renderTasks(){
                     <!-- <span>${task.priority}</span>   -->
                     <span class="priority-badge ${task.priority.toLowerCase()}">${task.priority}</span>
                     <div class="actions">
+                        <button class="reopen-btn">✔️ Re-open</button>
                         <button class="delete-btn">❌</button>
                     </div>
                 </div>
@@ -127,6 +128,28 @@ pendingTask.addEventListener("click", (event) => {
 })
 
 completedTask.addEventListener("click", (event) => {
+    // The investigator: Intercepting the Re-open command
+    if(event.target.classList.contains("reopen-btn")){
+        // Create a variable to find the parent card 
+        const taskCard = event.target.closest(".task-card")
+
+        // Extract the unique id from the card using .datset property
+        const taskId = taskCard.dataset.id;
+
+        // Using .find to find the task
+        const foundTask = tasks.find(task => task.id == taskId)
+
+        if (foundTask){
+            foundTask.status = "Pending" // Flip it back
+        }
+
+        renderTasks()
+        saveToStorage()
+    }
+
+
+    // The Eraser: Wiping out a completed task completely
+
     if (event.target.classList.contains("delete-btn")){
         
         // Create a variable to find the parent card 
