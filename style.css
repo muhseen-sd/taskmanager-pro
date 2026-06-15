@@ -209,3 +209,68 @@ body{
     background-color: rgba(16, 185, 129, 0.15); /* Soft emerald tint */
     color: var(--priority-low);                /* Vibrant green text */
 }
+
+/* The parent buttons raw wrappers layouts*/
+.task-card .actions{
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+/* STyle the Complete Action Button container */
+.task-card .complete-btn{
+    flex: 1; /* Powerful flex instruction: tells the button to expand and fill up all available row space */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.3rem;
+
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #15803d;
+    background-color: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+/* Complete Button hover  */
+.task-card .complete-btn:hover{
+    background-color: #dcfce7;
+    transform: translateY(-1px);
+}
+
+/* Style the "Delete" button  */
+
+.task-card .delete-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0.5rem;
+    width: 36px;
+    height: 36px;
+
+    background-color: #fef2f2;
+    border: 1px solid #fee2e2;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+
+}
+
+/* Delete Button hover */
+
+.task-card .delete-btn:hover{
+    background-color: #fee2e2;
+    border-color: #fca5a5;
+    transform: translateY(-1px);
+}
+
+/* Active compressed feedback layout for both interactive items */
+.task-card .complete-btn:active,
+.task-card .delete-btn:active {
+    transform: translateY(1px);
+}
