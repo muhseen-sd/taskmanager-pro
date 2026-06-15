@@ -169,7 +169,7 @@ completedTask.addEventListener("click", (event) => {
 
 })
 
-// To dave our list of task even after a refresh there is a need ti save them in the localStorage
+// To save our list of task even after a refresh there is a need ti save them in the localStorage
 
 function saveToStorage(){
     localStorage.setItem("myTasks", JSON.stringify(tasks));
