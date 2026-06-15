@@ -181,3 +181,31 @@ body{
     line-height: 1.4;
     margin-bottom: 0.75rem;
 }
+
+/* Core structure for all priority labels */
+.priority-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    border-radius: 20px; /* Forces a rounded pill shape rather than a card box */
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+
+/* Dynamic color definitions using our design system variables */
+.priority-badge.high {
+    background-color: rgba(239, 68, 68, 0.15); /* Soft crimson tint */
+    color: var(--priority-high);               /* Vivid red text */
+}
+
+.priority-badge.medium {
+    background-color: rgba(245, 158, 11, 0.15); /* Soft amber tint */
+    color: var(--priority-med);                /* Warm orange text */
+}
+
+.priority-badge.low {
+    background-color: rgba(16, 185, 129, 0.15); /* Soft emerald tint */
+    color: var(--priority-low);                /* Vibrant green text */
+}

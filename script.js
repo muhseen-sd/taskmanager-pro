@@ -24,7 +24,8 @@ function renderTasks(){
             let pendingCard = ` 
                 <div class="task-card" data-id="${task.id}">
                     <h3>${task.title}</h3>
-                    <span>${task.priority}</span>
+                    <!--     <span>${task.priority}</span> -->
+                    <span class="priority-badge ${task.priority.toLowerCase()}">${task.priority}</span>
                     <div class="actions">
                         <button class="complete-btn">✔️</button>
                         <button class="delete-btn">❌</button>
@@ -39,7 +40,8 @@ function renderTasks(){
             let completedCard = `
                 <div class="task-card" data-id="${task.id}">
                     <h3>${task.title}</h3>
-                    <span>${task.priority}</span>
+                    <!-- <span>${task.priority}</span> -->
+                    <span class="priority-badge ${task.priority.toLowerCase()}">${task.priority}</span>
                     <div class="actions">
                         <button class="delete-btn">❌</button>
                     </div>
