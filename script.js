@@ -7,8 +7,8 @@ const completedTask = document.querySelector("#completed-tasks-container")
 // Starting dataset array 
 
 let tasks = JSON.parse(localStorage.getItem("myTasks")) || [
-    { id: 1, title: "Review InsightFilter deployment strategy", priority: "High", status: "Pending" },
-    { id: 2, title: "Optimize CSS Grid breakpoints", priority: "Medium", status: "Completed" },
+    // { id: 1, title: "Review InsightFilter deployment strategy", priority: "High", status: "Pending" },
+    // { id: 2, title: "Optimize CSS Grid breakpoints", priority: "Medium", status: "Completed" },
 ];
 
 /* Writing a function that loops through the tasks array, builds the HTML string for each card, 
