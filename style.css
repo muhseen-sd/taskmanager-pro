@@ -277,3 +277,26 @@ body{
 .task-card .reopen-btn:active {
     transform: translateY(1px);
 }
+
+
+/* MEDIA QUERY SECTION */
+@media (max-width: 768px){
+    /* force the body to look cleaner on the mobile view */
+    body{
+        padding: 1rem;
+    }
+
+    .dashboard-container{
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .task-board{
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .control-panel{
+        padding: 1.5rem;
+    }
+}
