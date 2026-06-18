@@ -176,3 +176,44 @@ function saveToStorage(){
 }
 
 console.log(localStorage)
+
+
+// ⚡ DARK MODE CONFIGURATION MACHINE
+const themeToggleBtn = document.querySelector("#theme-toggle");
+const htmlElement = document.documentElement; // Targets the highest <html> tag layer
+
+// 1. Check for previously saved theme preference on boot up
+const savedTheme = localStorage.getItem("appTheme") || "light";
+
+// Apply the saved state immediately when the page reads the script
+htmlElement.setAttribute("data-theme", savedTheme);
+updateToggleIcon(savedTheme);
+
+// 2. Add Event Listener to intercept button clicks
+themeToggleBtn.addEventListener("click", () => {
+    // Check what the active state currently is
+    const currentTheme = htmlElement.getAttribute("data-theme");
+    let newTheme = "light";
+
+    if (currentTheme === "light") {
+        newTheme = "dark";
+    }
+
+    // Flip the state on the HTML tag boundaries
+    htmlElement.setAttribute("data-theme", newTheme);
+    
+    // Save state to browser memory cache
+    localStorage.setItem("appTheme", newTheme);
+    
+    // Update the button graphic icon smoothly
+    updateToggleIcon(newTheme);
+});
+
+// 3. Helper function to swap emojis based on current environment
+function updateToggleIcon(theme) {
+    if (theme === "dark") {
+        themeToggleBtn.textContent = "☀️"; // Show sun icon in dark mode to switch back to light
+    } else {
+        themeToggleBtn.textContent = "🌙"; // Show moon icon in light mode to switch to dark
+    }
+}

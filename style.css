@@ -83,10 +83,40 @@ body{
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    margin-bottom: 1.5rem;                 /* Pushes the input fields down cleanly */
+    margin-bottom: 0 !important;
     color: var(--text-primary);
 }
 
+/* Darkmode Styling */
+.panel-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.theme-toggle-btn{
+    background-color: var(--input-bg);
+    border: 1px solid var(--border-subtle);
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    box-shadow: none !important;
+    flex-shrink: 0;
+    align-self: center;
+}
+
+.theme-toggle-btn:hover {
+    background-color: var(--border-subtle);
+    transform: scale(1.1); /* Subtle premium pop zoom effect */
+}
 
 /* Organize form layout into a vertical stack */
 .control-panel form{
@@ -110,9 +140,9 @@ body{
     width: 100%;
     padding: 0.75rem 1rem;
     font-size: 0.95rem;
-    border: 1px solid #cbd5e1; /* Subtle clean border */
+    border: 1px solid var(--border-subtle);   /* 🔄 Swapped to variable */
     border-radius: 8px;
-    background-color: #f8fafc; /* Ultra-light surface fill for inputs */
+    background-color: var(--input-bg);        /* 🔄 Swapped to variable */
     color: var(--text-primary);
     transition: var(--transition-smooth);
     outline: none; /* remove the default browser blacklines */
@@ -126,7 +156,7 @@ body{
 
 }
 
-.control-panel button {
+.control-panel form button {
     width: 100%;
     padding: 0.85rem;
     font-size: 1rem;
@@ -140,7 +170,7 @@ body{
     box-shadow: 0 2px 4px 0 rgba(100, 116, 139, 0.2);
 }
 
-.control-panel button:hover{
+.control-panel form button:hover{
     background-color: #475569;
     box-shadow: 0 4px 12px 0 rgba(100, 116, 139, 0.3);
     transform: translateY(-1px); /* Moves button up by 1 pixel micro-interaction */
@@ -148,7 +178,7 @@ body{
 }
 
 /* Active Effect: The exact millisecond the user clicks down */
-.control-panel button:active {
+.control-panel form button:active {
     transform: translateY(1px); /* Pushes button down slightly to feel mechanical */
     box-shadow: 0 1px 2px 0 rgba(100, 116, 139, 0.2);
 }
@@ -183,7 +213,7 @@ body{
     padding: 1.25rem;
     border-radius: var(--radius-premium);
     margin-bottom: 1rem;
-    border: 1px solid #e2e8f0;
+    border: 1px solid var(--card-border);     /* 🔄 Swapped to variable */
     transition: var(--transition-smooth);
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
 }
