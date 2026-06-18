@@ -1,21 +1,41 @@
-:root{
-    /* Premium color palette */
-    --bg-main: #f4f6f9;         /* Soft, premium light grey background */
-    --surface-card: #ffffff;       /* Pure white for our task cards and forms */
-    --text-primary: #1e293b;      /* Deep slate grey for high-contrast headings */
-    --text-muted: #64748b;        /* Soft slate grey for secondary text/subtitles */
+:root {
+    /* Premium light theme color palette */
+    --bg-main: #f4f6f9;         
+    --surface-card: #ffffff;       
+    --text-primary: #1e293b;      
+    --text-muted: #64748b;        
+    
+    /* Dynamic Structural Variables */
+    --input-bg: #f8fafc;        /* Soft gray fill for input spaces */
+    --border-subtle: #cbd5e1;   /* Input field default boundary */
+    --card-border: #e2e8f0;     /* Default task card border line */
 
-    /* Branding Colors  */
-    --primary-accent: #4f46e5; /* Deep Royal Violet for buttons and key lines */
-    --priority-high: #ef4444;   /* Vivid crimson for high-priority elements */
-    --priority-med: #f59e0b;    /* Warm amber for medium priority */
-    --priority-low: #10b981;    /* Vibrant emerald green for low priority */
+    /* Branding Colors */
+    --primary-accent: #4f46e5; 
+    --priority-high: #ef4444;   
+    --priority-med: #f59e0b;    
+    --priority-low: #10b981;    
     
     /* Global Layout Metrics */
-    --radius-premium: 12px;    /* Smooth rounded corners for a modern feel */
+    --radius-premium: 12px;    
     --shadow-subtle: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
+/* 🌙 Production Dark Theme Variable Switchboard */
+html[data-theme="dark"] {
+    --bg-main: #0f172a;         /* Dark Slate Night Sky canvas */
+    --surface-card: #1e293b;    /* Deep slate container fill */
+    --text-primary: #f8fafc;    /* Crisp off-white text headers */
+    --text-muted: #94a3b8;      /* Clean silver muted descriptions */
+    
+    /* Swapping out our input fills and boundaries into deep space configurations */
+    --input-bg: #1e293b;        
+    --border-subtle: #475569;   
+    --card-border: #334155;     
+    
+    /* Brightening shadows slightly for floating elements against a dark canvas */
+    --shadow-subtle: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
 }
 
 /* Universal Reset */
