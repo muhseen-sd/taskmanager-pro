@@ -151,9 +151,14 @@ body{
 /* Interactive focus effectwhen user click on inputs */
 .control-panel input[type=text]:focus, .control-panel select:focus {
     border-color: var(--primary-accent);
-    background-color: #ffffff;
+    background-color: var(--surface-card);
     box-shadow: 0 0 0 3px rgb(79, 70, 229, 0.15); /* Adds a premium soft outer glow */
 
+}
+
+.control-panel select option {
+    background-color: var(--surface-card); /* Deep slate in dark mode, white in light mode */
+    color: var(--text-primary);            /* Crisp off-white in dark mode, dark slate in light mode */
 }
 
 .control-panel form button {
@@ -182,6 +187,8 @@ body{
     transform: translateY(1px); /* Pushes button down slightly to feel mechanical */
     box-shadow: 0 1px 2px 0 rgba(100, 116, 139, 0.2);
 }
+
+
 
 /* Style the header container holding out text and icons */
 .column-header{
